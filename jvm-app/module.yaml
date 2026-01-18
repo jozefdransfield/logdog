@@ -1,0 +1,10 @@
+product:
+    type: jvm/app
+
+dependencies:
+    - $compose.desktop.currentOs
+
+settings:
+    compose: enabled
+    jvm:
+        mainClass: logdog.AppKt

@@ -1,0 +1,14 @@
+product:
+  type: lib
+  platforms: [ jvm ]
+
+dependencies:
+  - $compose.foundation: exported
+  - $compose.material3: exported
+  - io.ktor:ktor-client-cio:3.3.2
+
+settings:
+  kotlin:
+    serialization: json
+    optIns: [ kotlin.time.ExperimentalTime ]
+  compose: enabled
