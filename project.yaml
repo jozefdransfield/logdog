@@ -1,4 +1,6 @@
 modules:
+  - ./lib
   - ./jvm-app
+  - ./sample
   - ./shared
 

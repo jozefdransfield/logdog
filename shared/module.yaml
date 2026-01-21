@@ -6,9 +6,12 @@ dependencies:
   - $compose.foundation: exported
   - $compose.material3: exported
   - io.ktor:ktor-client-cio:3.3.2
+  - ../lib
 
 settings:
   kotlin:
+    version: 2.3.0
     serialization: json
-    optIns: [ kotlin.time.ExperimentalTime ]
+    freeCompilerArgs: [ -Xcontext-parameters, -Xexplicit-backing-fields ]
+    optIns: [ kotlin.uuid.ExperimentalUuidApi ]
   compose: enabled
