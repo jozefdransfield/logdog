@@ -10,10 +10,16 @@ suspend fun main() = coroutineScope {
 
     while(isActive) {
         Logger.span("span1") { span ->
+            span.log("Running for 3 seconds")
             runBlocking {
-                delay(5000)
+                delay(3000)
             }
-            span.log("Hello from span1")
+            span.nestedSpan("span2") { span ->
+                span.log("Running for 2 seconds")
+                runBlocking {
+                    delay(2000)
+                }
+            }
         }
 
     }

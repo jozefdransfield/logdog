@@ -33,10 +33,10 @@ fun Screen(flow: Flow<LogEvent>) {
                 // Left Pane: List View
                 Box(modifier = Modifier.weight(1f).fillMaxHeight()) {
                     LazyColumn(modifier = Modifier.fillMaxSize()) {
-                        items(scopes) { item ->
+                        items(scopes.entries.toList().filter { it.value.parentId == null }) { item ->
                             ListItem(
-                                headlineContent = { Text(item.id + " - " + item.name) },
-                                modifier = Modifier.clickable { selectedItem = item }.animateItem(
+                                headlineContent = { Text(item.key + " - " + item.value.name) },
+                                modifier = Modifier.clickable { selectedItem = item.value }.animateItem(
                                     fadeInSpec = spring(),
                                     fadeOutSpec = spring(),
                                     placementSpec = spring()
